@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root  "products#index"
+  resources :buys 
 
   resources :products
+
+  resources :clients
 
 end

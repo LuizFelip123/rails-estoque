@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-    validates :name, presence: {message:"O Nome é um campo obrigatório"}
+  has_many :buy
     validates :description, presence: {message:"A Descrição é um campo obrigatório"} 
-    
+
 end

@@ -9,39 +9,36 @@
 
 </head>
 <body>
-<nav class="nav  bg-info  p-2">
-        <a class="nav-link text-white " href="<%= products_path %>">Listar</a>
-        <a href="<%= new_product_path %>" class="nav-link text-white">Adicionar</a>
-           <a class="nav-link text-white " href="<%= clients_path %>">Listar Clientes</a>
-       <a href="<%= new_client_path %>" class="nav-link text-white">Adicionar Cliente</a>
-      </nav>
+    <nav class="nav  bg-info  p-2">
+        <a class="nav-link text-white " href="<%= products_path%>">Listar</a>
+        <a href="<%= new_product_path %>" class="nav-link text-white" >Adicionar</a>
+         <a class="nav-link text-white " href="<%= clients_path %>">Listar Clientes</a>
+          <a href="<%= new_client_path %>" class="nav-link text-white">Adicionar Cliente</a>
 
+      </nav>
+     
     <div class="container pt-5"> 
-        <h3>Cadastro Produto</h3>
-        <%= form_with model: @product do |form| %>
+        <h3>Cadastro de Cliente</h3>
+        <%= form_with model: @client do |form| %>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="nome">Nome</label>
-                 <%= form.text_field :name, class: "form-control", placeholder: "Nome do Produto" %>
-                <% @product.errors.full_messages_for(:name).each do |message|%>
-                    <div class="text-danger"><%= message.gsub('Name', '')%></div>
-                <%end%>
+                 <%= form.text_field :name, class: "form-control", placeholder: "Nome" %>
+             
               </div>
               <div class="form-group col-md-6">
-                <label for="preco">Preço</label>
-                  <%= form.number_field :price, class:"form-control", placeholder:"Preço" %>  
+                <label for="cpf">CPF</label>
+                  <%= form.text_field :cpf, class:"form-control", placeholder:"CPF" %>  
                 </div>
             </div>
             <div class="form-group">
-              <label for="descricao">Descrição</label>
-             <%= form.text_field :description, class:"form-control", placeholder:"Descrição" %>  
-                <%@product.errors.full_messages_for(:description).each do |message|%>
-                    <div class="text-danger"><%=message.gsub('Description', '')%> </div>
-                <%end%>
+              <label for="cidade">Cidade</label>
+             <%= form.text_field :city, class:"form-control", placeholder:"Cidade" %>  
+              
               </div>
             <div class="form-group">
-              <label for="quantidade">Quantidade</label>
-             <%= form.number_field :amount, class:"form-control", placeholder:"Descrição" %>  
+              <label for="bairro">Bairro</label>
+             <%= form.text_field :district, class:"form-control", placeholder:"Bairro" %>  
 
             </div>
         

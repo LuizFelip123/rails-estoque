@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<nav class="nav  bg-info  p-2">
+    <nav class="nav  bg-info  p-2">
         <a class="nav-link text-white " href="<%= products_path %>">Listar</a>
         <a href="<%= new_product_path %>" class="nav-link text-white">Adicionar</a>
            <a class="nav-link text-white " href="<%= clients_path %>">Listar Clientes</a>
@@ -26,35 +26,38 @@
                       <tr>
                         <th >ID</th>
                         <th >Nome</th>
-                        <th >Descricao</th>
-                        <th >Quantidade</th>
-                        <th>Preço</th>
+                        <th >CPF</th>
+                        <th >Cidade</th>
+                        <th>Bairro</th>
                         <th>Ações</th>
                       </tr>
                     </thead>
                     <tbody>
-                    <% @products.each do |product| %>
-                        <tr>
-                        <th scope=""><%= product.id%></th>
-                        <td><%= product.name %></td>
-                        <td><%= product.description %></td>
-                        <td><%= product.amount %></td>
-                        <td>R$ <%= product.price.to_s.gsub('.', ',') %>0</td>
-                        <td  class="d-flex"><%= link_to edit_product_path(product), class: "pr-2" do %>
+                    <% @clients.each do |client| %>
+                     <tr>
+                        <th scope=""><%= client.id%></th>
+                        <td><%= client.name %> </td>
+                        <td><%= client.cpf %> </td>
+                        <td><%= client.city %> </td>
+                        <td><%= client.district %> </td>
+                           <td  class="d-flex"><%= link_to edit_client_path(client), class: "pr-2" do %>
   <button type="button" class="btn btn-primary text-white">Editar</button>
-<% end %>   <%= form_with(model: product, local: true, method: :delete, data: { confirm: 'Tem certeza?' }) do |form| %>
+<% end %>   <%= form_with(model: client, local: true, method: :delete, data: { confirm: 'Tem certeza?' }) do |form| %>
     <%= form.submit "Excluir", class: "btn btn-danger" %>
+
+
   <% end %>
-  
-  <a class="pl-2" href=""> <button type="button" class=" btn btn-info text-white">Vender</button> </a>
-   </td>
-                      </tr>
-                     <% end %> 
+    
+  </td>
+
+                     </tr>
+
+                    <%end%>
                     </tbody>
                    
                   </table> 
-                    <% if @products.empty? %>
-                        <h5 class="text-center"> Não Há Produtos Cadastrados!!</h4>
+                    <% if @clients.empty? %>
+                        <h5 class="text-center"> Não Há clientes Cadastrados!!</h4>
                     <% end %>
             </div>
             

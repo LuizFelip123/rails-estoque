@@ -9,14 +9,18 @@
 
 </head>
 <body>
-    <nav class="nav  bg-info  p-2">
-        <a class="nav-link text-white " href="<%= products_path%>">Listar</a>
-        <a href="<%= new_product_path %>" class="nav-link text-white" >Adicionar</a>
+ <nav class="nav  bg-info  p-2">
+        <a class="nav-link text-white " href="<%= products_path %>">Listar</a>
+        <a href="<%= new_product_path %>" class="nav-link text-white">Adicionar</a>
+           <a class="nav-link text-white " href="<%= clients_path %>">Listar Clientes</a>
+       <a href="<%= new_client_path %>" class="nav-link text-white">Adicionar Cliente</a>
       </nav>
+
      
     <div class="container pt-5"> 
-        <h3>Cadastro Produto</h3>
-        <%= form_with model: @product do |form| %>
+        <h3>Editar Produto</h3>
+        <%= form_with model: @product, url: product_path(@product), method: :patch do |form| %>
+      
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="nome">Nome</label>
@@ -44,7 +48,7 @@
             </div>
         
          
-            <%= form.submit "Cadastrar", class: "btn btn-info"%>
+            <%= form.submit "Editar", class: "btn btn-info"%>
           <%end%>
     </div>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
