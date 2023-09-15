@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   root  "products#index"
   resources :buys 
 
-  resources :products
+  resources :products do 
+    member do 
+      get 'select_buy', to: 'buys#select_buy'
+    end  
+  end  
 
   resources :clients
 

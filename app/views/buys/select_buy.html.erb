@@ -43,12 +43,8 @@
                         <td><%= client.city %> </td>
                         <td><%= client.district %> </td>
                            <td  class="d-flex"><%= link_to edit_product_path(client), class: "pr-2" do %>
-  <button type="button" class="btn btn-primary text-white">Editar</button>
-<% end %>   <%= form_with(model: client, local: true, method: :delete, data: { confirm: 'Tem certeza?' }) do |form| %>
-    <%= form.submit "Excluir", class: "btn btn-danger" %>
-
-
-  <% end %>
+  <button type="button" class="btn btn-primary text-white">Selecionar</button>
+ <% end %> 
     
   </td>
 
